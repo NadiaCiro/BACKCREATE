@@ -1,0 +1,13 @@
+
+{
+    "version":20.5 ,
+    "builds": [
+    { "src": "node/src/**/*.js", "use": "@now/node" }
+    ],
+    "routes": [
+    { "src": "/api/(.*)", "dest": "node/src/$1" },
+    { "handle": "filesystem" }
+    ]
+    
+}
+
