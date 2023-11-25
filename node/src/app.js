@@ -4,7 +4,7 @@ import usersRoutes from './routes/users.routes.js';
 import indexRoutes from "./routes/index.routes.js"
 import productsRoutes from "./routes/products.routes.js";
 import cors from "cors";
-import { featuredProducts } from './controllers/featured.controller.js';
+import featuredRoutes from './routes/featured.routes.js';
 
 const app = express()
 
@@ -22,7 +22,7 @@ app.use(express.json(corsOptions))/*Primero se recibe los datos se convierten a 
 app.use(indexRoutes)
 app.use('/api',usersRoutes)
 app.use('/api', productsRoutes)
-app.use('/api', featuredProducts)
+app.use('/api', featuredRoutes)
 
 /*Not found Route */
 app.use((req, res, next) => {
