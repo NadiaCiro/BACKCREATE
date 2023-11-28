@@ -1,6 +1,6 @@
 /* Arranca todo el programa, llama a la app, se inicializa el servidor localhost */
 import app from './app.js';
-import {PORT,DB_DATABASE,DB_HOST} from './config.js'
+import {PORT} from './config.js'
 
 
 
