@@ -7,7 +7,7 @@ import cors from "cors";
 import featuredRoutes from './routes/featured.routes.js';
 
 const app = express()
-
+app.use(express.static('public'));
 
 var corsOptions = {
     origin: 'http://127.0.0.1:4200',
