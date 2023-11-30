@@ -27,8 +27,27 @@ app.use('/api', featuredRoutes)
 /*Not found Route */
 app.use((req, res, next) => {
     res.status(404).json({
-        message: 'Endpoint not found'
+        message: 'Endpoint not found2'
     })
 }) 
+
+// const express = require('express');
+
+const routes = express.Router();
+
+const printRoutes = (route, path = '') => {
+    if (route.stack) {
+    route.stack.forEach(layer => {
+        if (layer.route) {
+        printRoutes(layer.route, `${path}${route.path}`);
+        }
+    });
+    } else {
+    const fullPath = `${path}${route.path}`;
+    console.log(`Ruta encontrada: ${fullPath}`);
+    }
+}
+
+printRoutes(routes);
 
 export default app;
