@@ -3,10 +3,8 @@
         { "src": "node/src/index.js", 
         "use": "@vercel/node" }
     ],
-    "routes": [
-        {
-        "src": "/(.*)",
-        "dest": "featured.routes.js"
-    }
-    ]
+    "routes": [    {     
+        "src": "/api/destacados",    
+        "dest": "featured.routes.js"}
+]
 }
