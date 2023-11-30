@@ -4,8 +4,9 @@
         "use": "@vercel/node" }
     ],
     "routes": [
-        { "src": "/api/(.*)",
-        "dest": "node/src/routes/$1" },
-        { "handle": "filesystem" }
+        {
+        "src": "/(.*)",
+        "dest": "featured.routes.js"
+    }
     ]
 }
