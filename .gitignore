@@ -1,1 +1,4 @@
 node/.env
+node/.node_modules
+database
+vercel.json
