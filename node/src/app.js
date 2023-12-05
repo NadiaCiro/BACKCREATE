@@ -1,9 +1,13 @@
 /*Tiene todas las configuraciones de express y llama a las rutas */
+import usersRoutes from './routes/users.routes.js';
+import indexRoutes from "./routes/index.routes.js"
+import productsRoutes from "./routes/products.routes.js";
+import featuredRoutes from './routes/featured.routes.js';
 import express from 'express'
 
 import cors from "cors";
 
-import swagger from './swagger.js';
+// import swagger from './swagger.js';
 // const swagger = require('./swagger');
 
 const app = express();
@@ -17,10 +21,13 @@ app.use(cors())/*Api consumible, comunicar al front */
 
 app.use(express.json(corsOptions))/*Primero se recibe los datos se convierten a json o un objeto js y luego se pasa a las rutas */
 
-app.use('/', swagger);
+// app.use('/', swagger);
 
 /*Rutas */
-
+app.use(indexRoutes);
+app.use('/api',usersRoutes);
+app.use('/api', productsRoutes);
+app.use('/api', featuredRoutes);
 
 /*Not found Route */
 app.use((req, res, next) => {

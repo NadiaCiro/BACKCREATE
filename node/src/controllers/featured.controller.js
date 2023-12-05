@@ -2,9 +2,15 @@
 import { pool } from "../db.js"
 
 export const featuredProducts = async (req,res)=>{
-    res.status(404).json({
-        message: 'Endpoint not found2'
-    });
-    const [rows] = await pool.query('SELECT product,title,descrip,color,price,category,url FROM orders_detail INNER JOIN products ON orders_detail.product = products.id_product GROUP BY product ORDER BY SUM(orders_detail.quantify) DESC LIMIT 5')
+    // res.status(404).json({
+    //     message: 'Endpoint not found2'
+    // });
+    try {
+        const [rows] = await pool.query('SELECT product,title,descrip,color,price,category,url FROM orders_detail INNER JOIN products ON orders_detail.product = products.id_product GROUP BY product ORDER BY SUM(orders_detail.quantify) DESC LIMIT 5')
     res.json(rows)
-}
+    } catch (error) {
+        return res.status(404).json({
+            message: 'Endpoint not found2'
+    })
+    
+}}
