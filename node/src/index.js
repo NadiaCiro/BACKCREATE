@@ -8,9 +8,9 @@ import featuredRoutes from './routes/featured.routes.js';
 app.use(indexRoutes);
 app.use('/api',usersRoutes);
 app.use('/api', productsRoutes);
-app.use('/api', featuredRoutes)
+app.use('/api', featuredRoutes);
 
-import {PORT} from './config.js'
+import {PORT} from './config.js';
 
 app.listen(PORT)
-    console.log('SERVER  Corriendo el servidor', PORT)
+    console.log('SERVER  Corriendo el servidor', PORT);
