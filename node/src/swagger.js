@@ -20,3 +20,14 @@ const specs = swaggerJsdoc(options);
 router.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 module.exports = router;
+
+// {
+//     "builds": [
+//         { "src": "node/src/index.js", 
+//         "use": "@vercel/node" }
+//     ],
+//     "routes": [    {     
+//         "src": "/api/destacados",    
+//         "dest": "featured.routes.js"}
+// ]
+// }
